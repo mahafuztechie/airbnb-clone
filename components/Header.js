@@ -3,8 +3,9 @@ import {SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon, UserIcon, UsersIcon}
 import { useState } from "react"
 import "react-date-range/dist/styles.css"; //main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from "react-date-range";
+import { DateRange } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
+
 
 function Header({placeholder}) {
    const [searchInput, setSearchInput] = useState("");
@@ -52,7 +53,7 @@ function Header({placeholder}) {
                 <input value={searchInput} 
                 onChange={(e) => setSearchInput(e.target.value)}
                 type="text" placeholder={placeholder || "start your search"}
-                className="flex-grow pl-5 bg-transparent outline-none placeholder-gray-400 text-sm text-gray-600"/>
+                className=" truncate flex-grow pl-5 bg-transparent outline-none placeholder-gray-400 text-sm text-gray-600"/>
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer
                 md:mx-2"/>
             </div>
@@ -66,7 +67,7 @@ function Header({placeholder}) {
             </div>
             {searchInput && 
                 <div className="flex flex-col col-span-3 mx-auto">
-                    <DateRangePicker
+                    <DateRange
                         ranges={[selectionRange]}
                         minDate={new Date()}
                         rangeColors={["#FD5B61"]}
@@ -83,8 +84,8 @@ function Header({placeholder}) {
                         className="w-12 pl-2 text-lg outline-none text-red-400" />
                     </div>
                     <div className="flex">
-                        <button onClick={resetInput} className="flex-grow text-gray-500">Cancel</button>
-                        <button onClick={search} className="flex-grow text-red-400">Search</button>
+                        <button onClick={resetInput} className="flex-grow text-gray-500 hover:bg-[#FD5B61] rounded-xl hover:text-white p-1">Cancel</button>
+                        <button onClick={search} className="flex-grow text-red-400 hover:bg-[#FD5B61] rounded-xl hover:text-white p-1">Search</button>
                     </div>
                 </div>}
         </header>
