@@ -49,7 +49,7 @@ function Header({placeholder}) {
                 objectFit="contain"
                 objectPosition="left"/>
             </div>
-            <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
+            <div className="flex items-center focus-within:shadow-lg md:border-2 rounded-full py-2 md:shadow-sm">
                 <input value={searchInput} 
                 onChange={(e) => setSearchInput(e.target.value)}
                 type="text" placeholder={placeholder || "start your search"}
@@ -60,7 +60,7 @@ function Header({placeholder}) {
             <div className="flex items-center justify-end space-x-4 text-gray-500">
                 <p className="hidden md:inline cursor-pointer">Become a host</p>
                 <GlobeAltIcon className="h-6 cursor-pointer"/>
-                <div className="flex items-cenetr cursor-pointer border-2 p-2 rounded-full">
+                <div className="flex items-cenetr bg-red-400 text-gray-100 cursor-pointer border-2 p-2 rounded-full">
                     <MenuIcon className="h-6"/>
                     <UserCircleIcon className="h-6"/>
                 </div>

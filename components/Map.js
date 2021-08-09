@@ -23,7 +23,7 @@ function Map({searchResults}) {
         zoom: 11,
     });
 
- console.log(selectedLocation)
+ 
     return (
       <ReactMapGL
        mapStyle="mapbox://styles/mahafuz/cks0pzln32j8k18nnckbw2nna"
@@ -57,10 +57,10 @@ function Map({searchResults}) {
                         >
                             <div className="relative  ">
                                 <Image src={result.img} height={100} width={220}  className="rounded-lg " />
-                            <div className="">
-                                <p className="text-red-500 text-xs ">{result.title}</p>
-                                <p className="text-black font-semibold text-xs">{result.price}</p> 
-                            </div>
+                                <div className="">
+                                    <p className="text-red-500 text-xs ">{result.title}</p>
+                                    <p className="text-black font-semibold text-xs">{result.price}</p> 
+                                </div>
                             </div>
                         </Popup>
                     ):(
